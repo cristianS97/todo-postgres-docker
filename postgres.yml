@@ -4,6 +4,7 @@ services:
   postgres:
     image: postgres
     restart: always
+    container_name: database
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
@@ -12,6 +13,6 @@ services:
         max-size: 10m
         max-file: "3"
     ports:
-      - '5438:5432'
+      - '5433:5432'
     volumes: 
       - ./data:/var/lib/postgresql/data
